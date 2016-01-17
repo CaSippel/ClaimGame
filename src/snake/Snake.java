@@ -1,4 +1,5 @@
 /* BUGS
+ * add: opening screen, music,
  * window size
  */
 
@@ -11,12 +12,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
+import javax.sound.sampled.AudioInputStream;
 import javax.swing.JFrame;
 import javax.swing.Timer;
+
 
 /**
  * @Original Framework: Jaryt Bustard
@@ -24,7 +27,8 @@ import javax.swing.Timer;
  */
 public class Snake implements ActionListener, KeyListener
 {
-
+	
+	
 	public static Snake snake;
 
 	public JFrame jframe;
@@ -52,10 +56,10 @@ public class Snake implements ActionListener, KeyListener
 	public Point block;
 
 	public Random random;
-
 	public boolean over = false, paused;
-
 	public Dimension dim;
+	
+	
 
 	public Snake()
 	{
@@ -126,8 +130,8 @@ public class Snake implements ActionListener, KeyListener
 					validMoveForP1(head1.x, head1.y -1);
 					head1 = new Point(head1.x, head1.y - 1);
 				}
-				else
-					over = true;
+				//else
+					//over = true;
 			}
 			if (direction1 == DOWN)
 			{
@@ -135,8 +139,8 @@ public class Snake implements ActionListener, KeyListener
 					validMoveForP1(head1.x, head1.y +1);
 					head1 = new Point(head1.x, head1.y + 1);
 				}
-				else
-					over = true;
+				//else
+					//over = true;
 			}
 			if (direction1 == LEFT)
 			{
@@ -144,8 +148,8 @@ public class Snake implements ActionListener, KeyListener
 					validMoveForP1(head1.x - 1, head1.y);
 					head1 = new Point(head1.x - 1, head1.y);
 				}
-				else
-					over = true;
+				//else
+					//over = true;
 			}
 			if (direction1 == RIGHT)
 			{
@@ -153,8 +157,8 @@ public class Snake implements ActionListener, KeyListener
 					validMoveForP1(head1.x + 1, head1.y);
 					head1 = new Point(head1.x + 1, head1.y);
 				}
-				else
-					over = true;
+				//else
+					//over = true;
 			}
 
 
@@ -165,8 +169,8 @@ public class Snake implements ActionListener, KeyListener
 					validMoveForP2(head2.x, head2.y - 1);
 					head2 = new Point(head2.x, head2.y - 1);
 				} 
-				else
-					over = true;
+				//else
+					//over = true;
 			}
 			if (direction2 == DOWN)
 			{
@@ -174,8 +178,8 @@ public class Snake implements ActionListener, KeyListener
 					validMoveForP2(head2.x, head2.y + 1);
 					head2 = new Point(head2.x, head2.y + 1);
 				}
-				else
-					over = true;
+				//else
+					//over = true;
 			}
 			if (direction2 == LEFT)
 			{
@@ -183,8 +187,8 @@ public class Snake implements ActionListener, KeyListener
 					validMoveForP2(head2.x - 1, head2.y);
 					head2 = new Point(head2.x - 1, head2.y);
 				}
-				else
-					over = true;
+				//else
+					//over = true;
 			}
 			if (direction2 == RIGHT)
 			{
@@ -192,8 +196,8 @@ public class Snake implements ActionListener, KeyListener
 					validMoveForP2(head2.x + 1, head2.y);
 					head2 = new Point(head2.x + 1, head2.y);
 				}
-				else
-					over = true;
+				//else
+					//over = true;
 			}
 
 
