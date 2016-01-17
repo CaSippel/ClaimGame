@@ -85,11 +85,6 @@ public class Snake implements ActionListener, KeyListener
 				over = true;
 		}
 	}
-	public void validGeneration(Point p){
-		for (int i=0 ; i < p1_blocks.size(); ++i)
-			if (p.equals(p1_blocks.get(i)) || p.equals(p2_blocks.get(i)))
-					over = true;
-	}
 	
 	
 	public void startGame()
@@ -215,7 +210,6 @@ public class Snake implements ActionListener, KeyListener
 					// make a new point and add that to that
 					p1_blocks.add(block);
 					block = new Point(random.nextInt(maxX), random.nextInt(maxY));
-					validGeneration(block);
 				}
 				if (head2.equals(block)) {
 					// when player 2 gets the block:
@@ -224,7 +218,6 @@ public class Snake implements ActionListener, KeyListener
 					// make a new point and add that to that
 					p2_blocks.add(block);
 					block = new Point(random.nextInt(maxX), random.nextInt(maxY));
-					validGeneration(block);
 				}
 					
 			}
